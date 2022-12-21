@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mongoose": "6.6.1"
+  },
+  "name": "Server-TFG",
+  "version": "0.0.1",
+  "description": "Este es el servidor para mi proyecto del TFG",
+  "main": "index.js",
+  "repository": "https://github.com/alvarolopezpineda1999/TFG-Proyecto.git",
+  "author": "Alvaro Lopez de Lemus Pineda",
+  "license": "MIT"
+}
