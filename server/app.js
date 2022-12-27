@@ -8,6 +8,7 @@ const app = express();
 //import routings
 const authRoutes = require('./router/auth');
 const userRoutes = require('./router/user');
+const commentRoutes = require('./router/comment');
 
 //configure Body Parse
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,4 +23,5 @@ app.use(cors());
 //configure routings
 app.use(`/TFG_api/${API_VERSION}`, authRoutes);
 app.use(`/TFG_api/${API_VERSION}`, userRoutes);
+app.use(`/TFG_api/${API_VERSION}`, commentRoutes);
 module.exports = app;
