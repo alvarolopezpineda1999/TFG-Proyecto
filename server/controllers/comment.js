@@ -3,6 +3,14 @@ const image = require('../utils/image');
 const { response } = require('../app');
 const Comment = require('../models/comment');
 
+async function getUserComments(req, res) {
+  const { id } = req.params;
+
+  let response = await Comment.find({ userId: id });
+
+  res.status(200).send(response);
+}
+
 async function getComments(req, res) {
   let response = await Comment.find();
 
@@ -41,7 +49,7 @@ async function deleteComment(req, res) {
     if (error) {
       res.status(400).send({ msg: 'Error al eliminar comentario' });
     } else {
-      res.status(200).send({ msg: 'Usuario eliminado' });
+      res.status(200).send({ msg: 'Comentario eliminado' });
     }
   });
 }
@@ -51,4 +59,5 @@ module.exports = {
   createComment,
   updateComment,
   deleteComment,
+  getUserComments,
 };

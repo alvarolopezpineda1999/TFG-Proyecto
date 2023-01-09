@@ -9,6 +9,7 @@ const app = express();
 const authRoutes = require('./router/auth');
 const userRoutes = require('./router/user');
 const commentRoutes = require('./router/comment');
+const listRoutes = require('./router/list');
 
 //configure Body Parse
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,4 +25,6 @@ app.use(cors());
 app.use(`/TFG_api/${API_VERSION}`, authRoutes);
 app.use(`/TFG_api/${API_VERSION}`, userRoutes);
 app.use(`/TFG_api/${API_VERSION}`, commentRoutes);
+app.use(`/TFG_api/${API_VERSION}`, listRoutes);
+
 module.exports = app;

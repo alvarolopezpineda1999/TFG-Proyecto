@@ -6,6 +6,12 @@ const md_auth = require('../middlewares/autenticated');
 const api = express.Router();
 
 api.get('/comments', [md_auth.asureAuth], commentController.getComments);
+api.get(
+  '/comments/:id',
+  [md_auth.asureAuth],
+  commentController.getUserComments
+);
+
 api.post('/comment', [md_auth.asureAuth], commentController.createComment);
 api.patch('/comment/:id', [md_auth.asureAuth], commentController.updateComment);
 api.delete(
