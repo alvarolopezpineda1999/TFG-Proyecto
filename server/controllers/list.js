@@ -34,7 +34,7 @@ async function updateList(req, res) {
   const { id } = req.params;
   const listData = req.body;
 
-  Comment.findByIdAndUpdate({ _id: id }, listData, (error) => {
+  List.findByIdAndUpdate({ _id: id }, listData, (error) => {
     if (error) {
       res.status(400).send({ msg: 'Error al actualizar la lista' });
     } else {
